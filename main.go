@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/carmooo/radarr-list/handler"
 	"github.com/go-chi/chi/v5"
 	"github.com/go-chi/chi/v5/middleware"
 )
@@ -10,8 +11,6 @@ import (
 func main() {
 	r := chi.NewRouter()
 	r.Use(middleware.Logger)
-	r.Get("/letterboxd/{slug}", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello world!"))
-	})
+	r.Get("/letterboxd/*", handler.HandleLetterboxd)
 	http.ListenAndServe(":3000", r)
 }

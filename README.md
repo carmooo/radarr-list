@@ -16,3 +16,9 @@ To add it to radarr just add a list in the Steven Lu Custom format and paste the
 ```
 make
 ```
+
+To run locally with caching in redis you should run redis in docker and set the REDIS_URL env var. Like so:
+```
+export REDIS_URL=localhost:6380
+docker-compose up redis
+```

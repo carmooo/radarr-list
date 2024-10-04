@@ -20,5 +20,8 @@
 # Go workspace file
 go.work
 
-# Folder to locally put stuff
+# Bin folder
+bin
+
+# Folder for random stuff 
 gitignore

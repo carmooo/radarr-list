@@ -27,3 +27,6 @@ bin
 gitignore
 
 # tmp folder (used by air)
+
+# jetbrains
+.idea

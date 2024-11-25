@@ -47,6 +47,10 @@ func GetMoviesFromLetterboxd(slug string) []StevenLuCustomMovie {
 		}
 	})
 
+	c.OnHTML(".paginate-nextprev .next", func(e *colly.HTMLElement) {
+		e.Request.Visit(e.Attr("href"))
+	})
+
 	c.OnHTML("html", func(e *colly.HTMLElement) {
 		movie := StevenLuCustomMovie{}
 		imdbLink := e.ChildAttr("a[data-track-action=IMDb]", "href")
